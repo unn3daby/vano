@@ -5,7 +5,7 @@ export default [
         to: {
             name: 'restaurants',
             query: {
-                filter: 'fastfood'
+                filter: 'Фастфуд'
             }
         }
     }, 
@@ -15,7 +15,7 @@ export default [
         to: {
             name: 'restaurants',
             query: {
-                filter: 'vegan'
+                filter: 'Веган'
             }
         }
     },
@@ -25,7 +25,7 @@ export default [
         to: {
             name: 'restaurants',
             query: {
-                filter: 'deserts'
+                filter: 'Десерты'
             }
         }
     },
@@ -35,7 +35,7 @@ export default [
         to: {
             name: 'restaurants',
             query: {
-                filter: 'meat'
+                filter: 'Мясо'
             }
         }
     },
@@ -45,7 +45,7 @@ export default [
         to: {
             name: 'restaurants',
             query: {
-                filter: 'pizza'
+                filter: 'Пицца'
             }
         }
     },
@@ -55,7 +55,7 @@ export default [
         to: {
             name: 'restaurants',
             query: {
-                filter: 'sushi'
+                filter: 'Суши'
             }
         }
     }

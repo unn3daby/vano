@@ -1,7 +1,6 @@
 <template>
     <span class="card__content--hashtag">
-        <img :src="props.src" :alt="props.alt">
-        Pizza
+        {{ props.text }}
     </span>
 </template>
 

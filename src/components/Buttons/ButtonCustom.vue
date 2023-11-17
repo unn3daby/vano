@@ -1,7 +1,7 @@
 <template>
     <button 
         class="btn" 
-        :class="{primary: props.primary, danger: props.danger, outline: props.outline }" 
+        :class="{'is-primary': props.primary, 'is-danger': props.danger, outline: props.outline }" 
         :disabled="props.disabled"
     >
         <slot></slot>

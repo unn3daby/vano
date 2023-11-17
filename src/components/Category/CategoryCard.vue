@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="props.to" class="category__item">
+  <router-link :to="props.to" class="category__item" :class="{active: $route.query.filter === props.name}">
     <div class="category__photo">
       <img class="category__img" :src="props.src" alt="" />
     </div>
@@ -44,6 +44,13 @@ const props = defineProps({
   border: 1px solid var(--primary);
   cursor: pointer;
   background-color: var(--grey-lightest);
+}
+
+.active {
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  background-color: var(--grey-lightest);
+  color: var(--bluw-light);
 }
 
 .category__img {

@@ -1,26 +1,14 @@
 <template>
-<div class="product__card">
-        <div class="card__preview" style="background-image: url(../../assets/imgs/products/food1.jpg);">
-          <span class="card__preview--badge">Featured</span>
+<div class="product__card" @click="$router.push(props.to)">
+        <div class="card__preview" :style="{ 'background-image': `url(${props.src})` }">
         </div>
         <div class="card__content">
           <div class="card__content-left">
-            <div class="card__content--title">Burgers & Pizza</div>
+            <div class="card__content--title">{{ props.name }}</div>
             <div class="card__content--info">
-              <div class="card__content--cook-time">
-                <img src="../../assets/imgs/products/icons/clock.svg" alt="Cook time">
-                123
-              </div>
-
-              <span class="card__content--tag-dot"></span>
-
-              <div class="card__content--price">
-                $24 min sum
-              </div>
             </div>
             <div class="card__content--hashtags">
-              <Hashtag src="../../assets/imgs/products/icons/burger.svg"/>
-              <Hashtag src="../../assets/imgs/products/icons/burger.svg"/>
+              <Hashtag v-if="props.label" :text="props.label"/>
             </div>
           </div>
           <div class="card__content-right">
@@ -30,7 +18,6 @@
                 <path d="M2.5 5H17.5" stroke="#C7C8D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M13.3333 8.33331C13.3333 9.21737 12.9821 10.0652 12.357 10.6903C11.7319 11.3155 10.8841 11.6666 10 11.6666C9.11595 11.6666 8.2681 11.3155 7.64298 10.6903C7.01786 10.0652 6.66667 9.21737 6.66667 8.33331" stroke="#C7C8D2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <span class="card__content--bag-count">2</span>
             </div>
           </div>
         </div>
@@ -39,6 +26,26 @@
 
 <script setup>
 import Hashtag from '../Hashtags/Hashtag.vue';
+
+const props = defineProps({
+  to: {
+    type: Object,
+    required: true,
+  },
+  src: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  label: {
+    type: String
+  }
+})
+
+console.log(props);
 </script>
 
 <style lang="scss" scoped>
@@ -49,6 +56,7 @@ import Hashtag from '../Hashtags/Hashtag.vue';
 }
 
 .product__card {
+    cursor: pointer;
     border: 1px solid var(--grey-lightest);
     border-radius: 16px;
 }
